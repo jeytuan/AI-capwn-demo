@@ -1,0 +1,30 @@
+AI-Capwn-demo
+AI-Capwn-demo is a Node.js-based web application that exposes various Ethereum-related endpoints to fetch data about smart contracts from the Ethereum mainnet, particularly those associated with the Lido protocol.
+
+Table of Contents
+Endpoints
+Justifications for Endpoints
+File Integration
+Setup
+Endpoints
+GET /latest-block: Fetches the current Ethereum block number.
+GET /contract-balance/:contractName: Fetches the balance of a specified smart contract.
+GET /contract-bytecode/:contractName: Fetches the bytecode of a specified smart contract.
+Justifications for Endpoints
+Latest Block: Knowing the current block number is essential for various operations, especially if you're tracking recent transactions or changes to a contract state.
+
+Contract Balance: Provides insight into the Ether holdings of a contract. It can be a valuable metric for gauging the usage or popularity of a particular contract, especially for decentralized finance (DeFi) platforms.
+
+Contract Bytecode: Useful for developers and security professionals. By inspecting a contract's bytecode, one can understand the contract's compiled logic, which can help in debugging or security audit purposes.
+
+File Integration
+index.js: This is the main server file that initializes the application, establishes endpoints, and handles requests. Integration with the Infura API and the Ethereum mainnet is managed here.
+
+Azure Integration: The code retrieves the Infura API key securely from Azure Key Vault. This is a best practice to avoid exposing sensitive data. The integration files are part of the Azure SDK dependencies in the package.json.
+
+Setup
+Clone the repository: git clone <repository-url>.
+Install the required packages: npm install.
+Make sure you have set up the Azure Key Vault and have the necessary permissions to retrieve secrets.
+Start the server: node index.js.
+Save this as README.md in the root of your AI-Capwn-demo project. Modify the "Setup" section if there are any other specific details or steps you'd like to include.
